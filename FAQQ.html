@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>FAQ - Nhà hàng chay Vô Vi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #F3ECDB;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background-color: #3E503C;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    nav {
+      background-color: #5c7f67;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #FF6F3D;
+      margin-bottom: 20px;
+    }
+    details {
+      background-color: #f9f9f9;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    summary {
+      font-weight: bold;
+      color: #3E503C;
+      cursor: pointer;
+    }
+    form {
+      margin-top: 30px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #5c7f67;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #3E503C;
+    }
+    footer {
+      background-color: #eee;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Câu hỏi thường gặp</h1>
+  <p>Chúng tôi giải đáp những thắc mắc phổ biến</p>
+</header>
+
+<nav>
+  <a href="TrangChu.html" class="hidden">Trang chủ</a>
+  <a href="GioiThieu.html" class="hidden">Giới thiệu</a>
+  <a href="SanPham.html" class="hidden">Dịch vụ</a>
+  <a href="ChiTietSP.html" class="hidden">Chi tiết sản phẩm</a>
+  <a href="LienHe.html" class="hidden">Liên hệ</a>
+  <a href="Uudaivatintuc.html" class="hidden">Tin Tức</a>
+  <a href="FAQQ.html" class="hidden">FAQ</a>
+  <a href="DNDK.html" class="hidden">Đăng nhập/Đăng ký</a>
+  <a href="GioHang.html" class="hidden">Giỏ hàng</a>
+  <a href="NhanSu.html" class="hidden">Nhân sự</a>
+</nav>
+
+<div class="container">
+  <h2>Các câu hỏi phổ biến</h2>
+
+  <details>
+    <summary>Nhà hàng có giao hàng không?</summary>
+    <p>Có, chúng tôi giao hàng trong khu vực nội thành Hà Nội và Hà Nam.</p>
+  </details>
+
+  <details>
+    <summary>Làm sao để đặt bàn?</summary>
+    <p>Bạn có thể đặt bàn trực tuyến tại trang "Dịch vụ" hoặc gọi đến hotline.</p>
+  </details>
+
+  <details>
+    <summary>Buffet có giới hạn thời gian không?</summary>
+    <p>Không giới hạn thời gian, bạn có thể thưởng thức thoải mái trong khung giờ phục vụ.</p>
+  </details>
+
+  <details>
+    <summary>Có món chay không gluten không?</summary>
+    <p>Có, bạn vui lòng báo trước để đầu bếp chuẩn bị thực đơn phù hợp.</p>
+  </details>
+
+  <h2>Bạn còn câu hỏi nào khác?</h2>
+  <form id="questionForm">
+    <label for="yourQuestion">Câu hỏi của bạn:</label>
+    <textarea id="yourQuestion" name="yourQuestion" rows="4" required></textarea>
+    <button type="submit">Gửi câu hỏi</button>
+  </form>
+</div>
+
+<script>
+  document.getElementById("questionForm").addEventListener("submit", function(event){
+    event.preventDefault();
+    alert("Cảm ơn bạn đã gửi câu hỏi cho chúng tôi! Chúng tôi sẽ phản hồi sớm nhất.");
+    this.reset();
+  });
+</script>
+<footer>
+    &copy; 2025 Vo Vi Restaurant. All rights reserved.
+  </footer>
+</body>
+</html>

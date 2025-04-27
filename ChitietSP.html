@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chi tiết Mâm cỗ chay - Vô Vi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #F3ECDB;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background-color: #3E503C;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #5c7f67;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px;
+    }
+    .set {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .set-content {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .set img {
+      width: 200px;
+      height: auto;
+      border-radius: 10px;
+    }
+    .set h2 {
+      color: #FF6F3D;
+      margin: 0 0 10px;
+    }
+    .price {
+      font-weight: bold;
+      color: #c0392b;
+    }
+    ul {
+      padding-left: 20px;
+      margin: 10px 0;
+    }
+    .menu-details {
+      flex: 1;
+    }
+    .back {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .back a {
+      color: #3E503C;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+    .details-toggle {
+      color: #FF6F3D;
+      cursor: pointer;
+      text-decoration: underline;
+      font-weight: bold;
+      margin-top: 10px;
+      display: inline-block;
+    }
+    .set-details, .buffet-details {
+      display: none;
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+    }
+    .buffet-details h3 {
+      color: #FF6F3D;
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    .buffet-details ul {
+      margin: 5px 0;
+    }
+    .category-content {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .category-content img {
+      width: 150px;
+      height: auto;
+      border-radius: 10px;
+    }
+    .category-details {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .category-details > div {
+      flex: 1;
+      min-width: 200px;
+    }
+    footer {
+      background-color: #3E503C;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Chi tiết các set Mâm cỗ chay</h1>
+  <p>Chọn set phù hợp cho lễ, tiệc chay hoặc dịp đặc biệt</p>
+</header>
+
+<nav>
+  <a href="TrangChu.html" class="hidden">Trang chủ</a>
+  <a href="GioiThieu.html" class="hidden">Giới thiệu</a>
+  <a href="SanPham.html" class="hidden">Dịch vụ</a>
+  <a href="ChiTietSP.html" class="hidden">Chi tiết sản phẩm</a>
+  <a href="LienHe.html" class="hidden">Liên hệ</a>
+  <a href="Uudaivatintuc.html" class="hidden">Tin Tức</a>
+  <a href="FAQQ.html" class="hidden">FAQ</a>
+  <a href="DNDK.html" class="hidden">Đăng nhập/Đăng ký</a>
+  <a href="GioHang.html" class="hidden">Giỏ hàng</a>
+  <a href="NhanSu.html" class="hidden">Nhân sự</a>
+</nav>
+
+<div class="container">
+
+  <!-- CÁC SET MÂM CỖ CHAY -->
+  <div class="set">
+    <h2>Các set mâm cỗ chay</h2>
+    <div class="set-content">
+      <img src="Images\mam-co-chay.png.jpg" alt="Mâm cỗ chay lý tưởng">
+      <div class="menu-details">
+        <span class="details-toggle" onclick="toggleSetDetails()">Chi tiết</span>
+      </div>
+    </div>
+    <div class="set-details" id="setDetails">
+      <!-- SET TINH HOA -->
+      <div class="set-content">
+        <img src="Images\set-tinh-hoa.png.jpg" alt="Set Tinh Hoa">
+        <div class="menu-details">
+          <h2>Set Tinh Hoa</h2>
+          <p class="price">Giá: 450.000đ</p>
+          <ul>
+            <li>Nem chay</li>
+            <li>Giò lụa</li>
+            <li>Nộm ngó sen</li>
+            <li>Phở cuốn</li>
+            <li>Củ quả luộc</li>
+            <li>Phồng tôm xúc nấm</li>
+            <li>Canh rau củ</li>
+            <li>Nước chấm</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SET TỨ PHÚC -->
+      <div class="set-content">
+        <img src="Images\set-tu-phuc.png.jpg" alt="Set Tứ Phúc">
+        <div class="menu-details">
+          <h2>Set Tứ Phúc</h2>
+          <p class="price">Giá: 650.000đ</p>
+          <ul>
+            <li>Nem chay, nem hải sản</li>
+            <li>Nộm ngó sen</li>
+            <li>Cải cuốn</li>
+            <li>Xôi ruốc nấm</li>
+            <li>Giò nấm</li>
+            <li>Củ quả luộc</li>
+            <li>Phồng tôm xúc nấm</li>
+            <li>Canh rau củ</li>
+            <li>Nước chấm</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SET TRÂN BẢO -->
+      <div class="set-content">
+        <img src="Images/set-tran-bao.png.jpg" alt="Set Trân Bảo">
+        <div class="menu-details">
+          <h2>Set Trân Bảo</h2>
+          <p class="price">Giá: 800.000đ</p>
+          <ul>
+            <li>Nem chay, nem hải sản</li>
+            <li>Nộm ngó sen</li>
+            <li>Cải cuốn</li>
+            <li>Xôi ruốc nấm</li>
+            <li>Giò nấm</li>
+            <li>Củ quả luộc</li>
+            <li>Phồng tôm xúc nấm</li>
+            <li>Canh rau củ</li>
+            <li>Nước chấm</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUFFET CHAY -->
+  <div class="set">
+    <h2>Ăn tại nhà hàng – Buffet chay</h2>
+    <div class="set-content">
+      <img src="Images\buffet-chay.png" alt="Buffet Chay">
+      <div class="menu-details">
+        <p class="price">Giá: 150.000đ/người</p>
+        <p>50+ món mỗi ngày</p>
+        <span class="details-toggle" onclick="toggleBuffetDetails()">Chi tiết</span>
+      </div>
+    </div>
+    <div class="buffet-details" id="buffetDetails">
+      <div class="category-content">
+        <img src="Images\salad-nom-va-mon-chien.png" alt="Salad, Nộm và Món Chiên">
+        <div class="category-details">
+          <div>
+            <h3>Salad, Nộm</h3>
+            <ul>
+              <li>Nộm Hoa Chuối</li>
+              <li>Nộm Cổ Hũ Dừa</li>
+              <li>Nộm Ngó Sen</li>
+              <li>Nộm Ngũ Sắc</li>
+              <li>Nộm Đu Đủ</li>
+              <li>Nộm Rau Mầm Cải</li>
+              <li>Nộm Rau Diếp Cá</li>
+              <li>Salad Cà Chua Dưa Chuột</li>
+              <li>Salad Hoa Quả</li>
+              <li>Salad Rau Trộn</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Món Chiên</h3>
+            <ul>
+              <li>Khoai Tây Lắc Phô Mai</li>
+              <li>Bánh Bao Chay Mật Tầm Vừng</li>
+              <li>Đậu Bao Chay Chiên</li>
+              <li>Phồng Tôm Rau Củ Chiên</li>
+              <li>Nấm Kim Châm Chiên</li>
+              <li>Nấm Hải Sản Chiên</li>
+              <li>Củ Sen Chiên</li>
+              <li>Rau Muống Chiên</li>
+              <li>Lá Lốt Chiên</li>
+              <li>Đu Đủ Gai Chiên</li>
+              <li>Kimbap Chiên</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="category-content">
+        <img src="Images\mon-cuon-goi-va-sup-canh.png" alt="Món Cuốn, Gỏi và Súp, Canh">
+        <div class="category-details">
+          <div>
+            <h3>Món Cuốn, Gỏi</h3>
+            <ul>
+              <li>Nem Chay</li>
+              <li>Nem Hải Sản</li>
+              <li>Phở Cuốn Ngũ Sắc</li>
+              <li>Đói Chay</li>
+              <li>Nem Cuốn Thịnh</li>
+              <li>Cải Cuốn</li>
+              <li>Kimbap</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Súp, Canh</h3>
+            <ul>
+              <li>Súp Bí Đỏ</li>
+              <li>Súp Ngô Non</li>
+              <li>Súp Nấm Mix</li>
+              <li>Súp Khoai Môn</li>
+              <li>Canh Kim Chi</li>
+              <li>Canh Nấm Tuyết</li>
+              <li>Canh Chua Chay</li>
+              <li>Canh Khoai Nấm</li>
+              <li>Cháo Chay Thập Cẩm</li>
+              <li>Cháo Đỗ Đen</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="category-content">
+        <img src="Images\mon-xao-va-trang-mieng.png" alt="Món Xào và Tráng Miệng">
+        <div class="category-details">
+          <div>
+            <h3>Món Xào</h3>
+            <ul>
+              <li>Ngô Xào Thập Cẩm</li>
+              <li>Suốn Chay Sốt Dừa</li>
+              <li>Suốn Chay Xào Ớt</li>
+              <li>Suốn Chay Sốt Me</li>
+              <li>Tảo Xoắn Xào Dừa</li>
+              <li>Bắp Non Xào Nấm</li>
+              <li>Nấm Đùi Gà Sốt Bơ Tỏi</li>
+              <li>Bò Chay Xào</li>
+              <li>Mỳ Xào</li>
+              <li>Miền Xào</li>
+              <li>Mỳ Spaghetti</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Tráng Miệng</h3>
+            <ul>
+              <li>Chè Dướng Nhân</li>
+              <li>Chè Thái</li>
+              <li>Thạch Chùa Dừa</li>
+              <li>Thạch Cốt Dừa</li>
+              <li>Thạch Sương Sáo</li>
+              <li>Nước Cốt Lá Dừa</li>
+              <li>Dưa Hấu Trái Tim</li>
+              <li>Xoài/Táo</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="category-content">
+        <img src="Images\mon-rau-va-mon-khac.png" alt="Món Rau và Món Khác">
+        <div class="category-details">
+          <div>
+            <h3>Món Rau</h3>
+            <ul>
+              <li>Cải Sốt Nấm</li>
+              <li>Củ Quả Ngũ Sắc</li>
+              <li>Nấm Hấp</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Món Khác</h3>
+            <ul>
+              <li>Bún Riêu</li>
+              <li>Phở Chay</li>
+              <li>Kho Quẹt Chay</li>
+              <li>Cơm Nấm Onigiri</li>
+              <li>Xôi Hạt Sen Dừa</li>
+              <li>Giò Tai Chay</li>
+              <li>Bánh Bao Chay</li>
+              <li>Bánh Cuốn</li>
+              <li>Bánh Dục</li>
+              <li>Pate Chay</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="back">
+    <a href="SanPham.html">Dịch vụ</a>
+  </div>
+
+</div>
+
+<footer>
+  © 2025 Vo Vi Restaurant. All rights reserved.
+</footer>
+
+<script>
+  function toggleSetDetails() {
+    var details = document.getElementById("setDetails");
+    if (details.style.display === "block") {
+      details.style.display = "none";
+    } else {
+      details.style.display = "block";
+    }
+  }
+
+  function toggleBuffetDetails() {
+    var details = document.getElementById("buffetDetails");
+    if (details.style.display === "block") {
+      details.style.display = "none";
+    } else {
+      details.style.display = "block";
+    }
+  }
+</script>
+
+</body>
+</html>

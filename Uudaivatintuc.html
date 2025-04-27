@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Ưu đãi và Tin tức - Vô Vi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #F3ECDB;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background-color: #3E503C;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #5c7f67;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px;
+    }
+    .news-section, .promotions-section {
+      margin-bottom: 40px;
+    }
+    .news-section h2, .promotions-section h2 {
+      color: #FF6F3D;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .feedback, .promotion {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .feedback-content, .promotion-content {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .feedback img, .promotion img {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+    .feedback-details, .promotion-details {
+      flex: 1;
+      min-width: 300px;
+    }
+    .promotion-details {
+      text-align: center; /* Center the text in the promotions section */
+      font-size: 18px; /* Increase font size for promotion details */
+    }
+    .feedback-details .customer, .promotion-details .title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .feedback-details .rating {
+      color: #FFD700;
+      margin-bottom: 10px;
+    }
+    .feedback-details .comment {
+      margin-bottom: 10px;
+      font-style: italic;
+      word-wrap: break-word;
+    }
+    .feedback-details .branch-date, .promotion-details .event-date {
+      color: #666;
+      font-size: 14px;
+    }
+    .feedback-details .branch-date span, .promotion-details .event-date span {
+      background-color: #8B5A2B;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+    .promotion-details .discount {
+      font-weight: bold;
+      color: #c0392b;
+      margin-bottom: 10px;
+    }
+    .back {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .back a {
+      color: #3E503C;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+    footer {
+      background-color: #3E503C;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Ưu đãi và Tin tức</h1>
+  <p>Cập nhật những thông tin mới nhất và ưu đãi từ Vô Vi</p>
+</header>
+
+<nav>
+  <a href="TrangChu.html" class="hidden">Trang chủ</a>
+  <a href="GioiThieu.html" class="hidden">Giới thiệu</a>
+  <a href="SanPham.html" class="hidden">Dịch vụ</a>
+  <a href="ChiTietSP.html" class="hidden">Chi tiết sản phẩm</a>
+  <a href="LienHe.html" class="hidden">Liên hệ</a>
+  <a href="Uudaivatintuc.html" class="hidden">Tin Tức</a>
+  <a href="FAQQ.html" class="hidden">FAQ</a>
+  <a href="DNDK.html" class="hidden">Đăng nhập/Đăng ký</a>
+  <a href="GioHang.html" class="hidden">Giỏ hàng</a>
+  <a href="NhanSu.html" class="hidden">Nhân sự</a>
+</nav>
+
+<div class="container">
+
+  <!-- Ưu đãi Section -->
+  <div class="promotions-section">
+    <h2>Ưu đãi</h2>
+    <!-- Promotion 1: Hai năm chay - Vạn điều thiện -->
+    <div class="promotion">
+      <div class="promotion-content">
+        <img src="Images\2 nam chay.png" alt="Hai năm chay - Vạn điều thiện">
+        <div class="promotion-details">
+          <div class="title">Mừng thành sinh nhật - Hai năm chay, vạn điều thiện</div>
+        </div>
+      </div>
+    </div>
+    <!-- Promotion 2: GrabFood Discount -->
+    <div class="promotion">
+      <div class="promotion-content">
+        <img src="Images\uu-dai.png" alt="Ưu đãi GrabFood">
+        <div class="promotion-details">
+          <div class="title">Ưu đãi GrabFood</div>
+          <div class="discount">Giảm 50% số lượng có hạn</div>
+          <div class="title">Ưu đãi cho đoàn khách</div>
+          <div class="discount">Giảm 15% trong tháng 4</div>
+        </div>
+      </div>
+    </div>
+    <!-- Promotion 3: Talkshow -->
+    <div class="promotion">
+      <div class="promotion-content">
+        <img src="Images\talkshow.png" alt="Talkshow bổ ích">
+        <div class="promotion-details">
+          <div class="title">Talkshow bổ ích - Chụp ảnh lung linh</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tin tức Section -->
+  <div class="news-section">
+    <h2>Feedback của khách hàng</h2>
+    <!-- Feedback 1 -->
+    <div class="feedback">
+      <div class="feedback-content">
+        <img src="Images\feedback-nhi-tran.png.jpg" alt="Feedback từ Nhi Trần">
+        <div class="feedback-details">
+          <div class="customer">Nhi Trần</div>
+          <div class="rating">★★★★★</div>
+          <div class="comment">Đồ ăn mê quá huhu, siêu ngon và siêu no nha. Lần trước e đi với bố mẹ nên nhớ mãi vị đồ ăn ở đây ạ. Yêu vô vi chay 💕💕</div>
+          <div class="branch-date">
+            <span>Chi nhánh Trần ghé thăm cơ sở Yên Lãng</span> 09/12/2024
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Feedback 2 -->
+    <div class="feedback">
+      <div class="feedback-content">
+        <img src="Images\feedback-hien-anh-nguyen.png" alt="Feedback từ Hiền Anh">
+        <div class="feedback-details">
+          <div class="customer">Hiền Anh</div>
+          <div class="rating">★★★★★ một tháng trước</div>
+          <div class="comment">Quán chay sạch sẽ ngay trung tâm thành phố Phủ Lý. Buffet chay đa dạng và vô cùng vừa miệng. Không gian quán sạch sẽ, các bạn nhân viên nhẹ nhàng và nhiệt tình. Mình đặc biệt thích best seller list 8 món vì ăn rất vừa miệng. Đoàn khách nào hành hương cũng đến các chùa ở Hà Nam có thể ghé quán ăn thử. Nếu có dịp mình chắc chắn muốn quay lại 😊</div>
+          <div class="branch-date">
+            <span>Chi Hiền Anh ghé thăm cơ sở Hà Nam</span> 16/03/2025
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Feedback 3 -->
+    <div class="feedback">
+      <div class="feedback-content">
+        <img src="Images\feedback-hong-nhat-pham.jpg" alt="Feedback từ Hồng Nhật">
+        <div class="feedback-details">
+          <div class="customer">Hồng Nhật</div>
+          <div class="rating">★★★★★ 2 tuần trước</div>
+          <div class="comment">Đồ ăn rất ngon cực hợp khẩu vị với mình, mình khá thích ăn chay mà tất cả các món đều 1 vị 1 sốt. Ở đây đồ ăn rất đa dạng, sạch sẽ, tươi ngon. Nhân viên phục vụ nhẹ nhàng lịch sự và nhiệt tình. Không gian sạch sẽ, yên tĩnh, cũng rất xinh. Sẽ quay lại nhiều lần nữa💗</div>
+          <div class="branch-date">
+            <span>Chi Hồng Nhật ghé thăm cơ sở Thịnh Quang</span> 02/03/2025
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Feedback 4: Mai Metta -->
+    <div class="feedback">
+      <div class="feedback-content">
+        <img src="Images\feedback-mai-metta.png" alt="Feedback từ Mai Metta">
+        <div class="feedback-details">
+          <div class="customer">Mai Metta</div>
+          <div class="rating">★★★★★</div>
+          <div class="branch-date">
+            <span>Chi Mai Metta ghé thăm cơ sở Yên Lãng</span> 07/12/2024
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="back">
+    <a href="index.html">← Quay lại</a>
+  </div>
+
+</div>
+
+<footer>
+  © 2025 Vo Vi Restaurant. All rights reserved.
+</footer>
+
+</body>
+</html>

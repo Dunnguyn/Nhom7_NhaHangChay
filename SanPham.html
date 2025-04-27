@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dịch vụ - Nhà hàng chay Vô Vi </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color:  #F3ECDB ;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background-color: #3E503C ;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    nav {
+      background-color: #5c7f67;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px;
+    }
+    h2 {
+      color: #FF6F3D;
+    }
+    .product {
+      display: flex;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+    .product img {
+      width: 250px;
+      height: auto;
+      object-fit: cover;
+    }
+    .product-info {
+      padding: 20px;
+      flex: 1;
+    }
+    .price {
+      color: #c0392b;
+      font-weight: bold;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .contact-form {
+      margin-top: 40px;
+      background-color: #fff ;
+      padding: 20px;
+      border-radius: 8px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #f1f1f1 ;
+      border-radius: 4px;
+    }
+    .product, .contact-form {
+  opacity: 0; 
+  transform: translateY(20px); 
+  transition: all 0.6s ease-out; 
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: white ;
+      margin-top: 40px;  
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Dịch vụ của chúng tôi</h1>
+  <p>Chọn hình thức phục vụ phù hợp với bạn!</p>
+</header>
+<nav>
+  <a href="TrangChu.html" class="hidden">Trang chủ</a>
+  <a href="GioiThieu.html" class="hidden">Giới thiệu</a>
+  <a href="SanPham.html" class="hidden">Dịch vụ</a>
+  <a href="ChiTietSP.html" class="hidden">Chi tiết sản phẩm</a>
+  <a href="LienHe.html" class="hidden">Liên hệ</a>
+  <a href="Uudaivatintuc.html" class="hidden">Tin Tức</a>
+  <a href="FAQQ.html" class="hidden">FAQ</a>
+  <a href="DNDK.html" class="hidden">Đăng nhập/Đăng ký</a>
+  <a href="GioHang.html" class="hidden">Giỏ hàng</a>
+  <a href="NhanSu.html" class="hidden">Nhân sự</a>
+</nav>
+<div class="container">
+
+  <h2>Mang đi - Đặt mâm cỗ chay</h2>
+  <div class="product">
+    <img src="Images/sp1.jpg" alt="Mâm cỗ chay">
+    <div class="product-info">
+      <h3>Mâm cỗ chay nhiều món</h3>
+      <p class="price">Giá: 450.000đ - 800.000đ</p>
+      <p>Phù hợp cho 4-6 người ăn. Bao gồm các món đặc trưng: gỏi cuốn, nem chay, nộm ngó sen, củ quả luộc, canh rau củ...</p>
+      <ul>
+        <li>Đặt hàng online, nhận tại nhà</li>
+        <li>Tính chi phí giao hàng theo khu vực</li>
+        <li>Hóa đơn điện tử kèm theo</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Ăn tại nhà hàng - Buffet chay</h2>
+  <div class="product">
+    <img src="Images/sp2.jpg" alt="Buffet chay">
+    <div class="product-info">
+      <h3>Buffet chay trưa và tối</h3>
+      <p class="price">Giá: 150.000đ/người</p>
+      <p>Hơn 50 món ăn chay đa dạng, bao gồm món khai vị, món chính, món tráng miệng.</p>
+      <ul>
+        <li>Không giới hạn số lượng món ăn</li>
+        <li>Không gian yên tĩnh, mát mẻ</li>
+        <li>Phù hợp cho nhóm bạn, gia đình</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Đặt bàn trực tuyến</h2>
+  <div class="contact-form">
+    <h3>Thông tin liên hệ đặt bàn</h3>
+    <p>Vui lòng để lại thông tin để nhà hàng liên lạc xác nhận.</p>
+    <form id="bookingForm">
+      <label for="name">Họ và tên:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="phone">Số điện thoại:</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="note">Ghi chú thêm (nếu có):</label>
+      <textarea id="note" name="note" rows="4"></textarea>
+
+      <button type="submit" style="margin-top: 15px; padding: 10px 20px; background-color: #5c7f67; color: white; border: none; border-radius: 4px;">Gửi thông tin</button>
+    </form>
+  </div>
+
+</div>
+<button id="backToTopBtn" style="display:none;position:fixed;bottom:30px;right:30px;padding:10px 15px;background:#5c7f67;color:white;border:none;border-radius:5px;cursor:pointer;">↑ Top</button>
+
+<script>
+  const backToTopBtn = document.getElementById('backToTopBtn');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.style.display = 'block';
+    } else {
+      backToTopBtn.style.display = 'none';
+    }
+  });
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+  const fadeElements = document.querySelectorAll('.product, .contact-form');
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  fadeElements.forEach(el => {
+    observer.observe(el);
+  });
+
+  const bookingForm = document.getElementById('bookingForm');
+  bookingForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Cảm ơn bạn đã gửi thông tin đặt bàn! Nhà hàng sẽ liên hệ bạn sớm.');
+    bookingForm.reset();
+  });
+</script>
+<footer>
+  &copy; 2025 Vo Vi Restaurant. All rights reserved.
+</footer>
+
+</body>
+</html> 

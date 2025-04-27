@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vô Vi - Nhà hàng chay</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #F3ECDB;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #3E503C;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    section {
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h2 {
+      color: #FF6F3D;
+    }
+    nav {
+      background-color: #5c7f67;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    blockquote {
+      font-style: italic;
+      margin: 20px 0;
+      padding-left: 20px;
+      border-left: 4px solid #384a35;
+      color: #555;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    ul li::before {
+      content: "\2022 ";
+      color: #5c7f67;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+    }
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60vh;
+    }
+    video {
+      width: 720px;
+      height: auto;
+      border-radius: 1px;
+    }
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 40px 0;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+    }
+
+    .gallery-item {
+      text-align: center;
+      width: 200px;
+      flex-shrink: 0;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .gallery-item img {
+      transition: transform 0.3s ease;
+    }
+    .gallery-item img:hover {
+      transform: scale(1.05);
+    }
+    .caption {
+      margin-top: 8px;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: white;
+      margin-top: 40px;
+    } 
+    .hidden {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Vô Vi - Nhà hàng chay</h1>
+    <p>Vì sức khỏe - Vì cộng đồng - Vì hành tinh</p>
+  </header>
+
+  <nav>
+    <a href="TrangChu.html" class="hidden">Trang chủ</a>
+    <a href="GioiThieu.html" class="hidden">Giới thiệu</a>
+    <a href="SanPham.html" class="hidden">Dịch vụ</a>
+    <a href="ChiTietSP.html" class="hidden">Chi tiết sản phẩm</a>
+    <a href="LienHe.html" class="hidden">Liên hệ</a>
+    <a href="Uudaivatintuc.html" class="hidden">Tin Tức</a>
+    <a href="FAQQ.html" class="hidden">FAQ</a>
+    <a href="DNDK.html" class="hidden">Đăng nhập/Đăng ký</a>
+    <a href="GioHang.html" class="hidden">Giỏ hàng</a>
+    <a href="NhanSu.html" class="hidden">Nhân sự</a>
+  </nav>
+
+  <section>
+    <h2>Lịch sử</h2>
+    <p class="hidden">Vô vi là nhà hàng chay được thành lập vào năm 2023. Với 3 cơ sở tại thành phố Hà Nội và tỉnh Hà Nam.</p>
+    <img class="hidden" src="Images/gt1.jpg" alt="Nhà hàng chay" style="max-width: 100%; height: auto;">
+
+    <h2>Giá trị</h2>
+    <p class="hidden">Xuất phát từ tình yêu với ẩm thực chay và mong muốn lan tỏa lối sống bền vững, Vô vi là điểm đến lý tưởng cho những ai yêu thích sự thanh đạm, tinh tế nhưng vẫn đậm đà bản sắc ẩm thực Việt Nam.</p>
+
+    <div class="video-container">
+      <video class="hidden" controls>
+        <source src="Videos/videogt.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <h2>Chúng tôi tin rằng:</h2>
+    <blockquote class="hidden">“Ẩm thực không chỉ là thức ăn, mà còn là một cách để chăm sóc tâm hồn.”</blockquote>
+
+    <h2>Cam kết của Vô vi</h2>
+    <ul class="hidden">
+      <li>Sử dụng 100% nguyên liệu tươi sạch, có nguồn gốc thực vật.</li>
+      <li>Không sử dụng phụ gia hóa học, không bột ngọt.</li>
+      <li>Không ngừng sáng tạo để mang đến thực đơn đa dạng, hấp dẫn và cân bằng dinh dưỡng.</li>
+    </ul>
+
+    <p class="hidden">Bên cạnh việc phục vụ món ăn ngon, chúng tôi còn hướng đến việc xây dựng không gian gần gũi, ấm cúng, nơi bạn có thể thư giãn, kết nối và tái tạo năng lượng tích cực trong cuộc sống hiện đại.</p>
+
+    <h2>Đội ngũ nhân viên của Vô vi</h2>
+    <ul class="hidden">
+      <li>Vũ Thị Hồng Hạnh - Quản lý</li>
+      <li>Bùi Thị Mai Hằng - Quản lý</li>
+      <li>Nguyễn Thị Thùy Dung - Bếp trưởng</li>
+      <li>Đỗ Hồng Đức - Thu ngân</li>
+      <li>Cùng nhiều nhân viên khác.</li>
+    </ul>
+
+    <div class="gallery">
+      <div class="gallery-item">
+        <img class="hidden" src="Images/Hanh.jpg" alt="gt3" />
+        <div class="caption">Chị Hồng Hạnh</div>
+      </div>
+      <div class="gallery-item">
+        <img class="hidden" src="Images/Hang.jpg" alt="gt4" />
+        <div class="caption">Chị Mai Hằng</div>
+      </div>
+      <div class="gallery-item">
+        <img class="hidden" src="Images/Dung.jpg" alt="gt5" />
+        <div class="caption">Chị Thùy Dung</div>
+      </div>
+      <div class="gallery-item">
+        <img class="hidden" src="Images/Duc.png" alt="gt6" />
+        <div class="caption">Anh Hồng Đức</div>
+      </div>
+    </div>
+
+    <p><strong class="hidden">Hãy đến và cùng trải nghiệm hành trình ẩm thực xanh tại Vô vi – Nhà hàng chay của tất cả mọi người.</strong></p>
+  </section>
+
+  <footer>
+    &copy; 2025 Vo Vi Restaurant. All rights reserved.
+  </footer>
+
+  <button id="backToTopBtn" style="display:none;position:fixed;bottom:30px;right:30px;padding:10px 15px;background:#5c7f67;color:white;border:none;border-radius:5px;cursor:pointer;">↑ Top</button>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show'); 
+        }
+      });
+    });
+
+    const hiddenElements = document.querySelectorAll('.hidden');
+    hiddenElements.forEach(el => observer.observe(el));
+
+    const backToTopBtn = document.getElementById('backToTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.style.display = 'block';
+      } else {
+        backToTopBtn.style.display = 'none';
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+
+</body>
+</html>

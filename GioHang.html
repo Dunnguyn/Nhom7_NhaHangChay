@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+    <style>
+        /* Reset mặc định */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f3edcb;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #3E503C;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #5c7f67;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+    table {
+        width: 90%;
+        margin: 20px auto;
+        border-collapse: collapse; 
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border: 1px solid #ddd; 
+    }
+
+    th, td {
+        padding: 10px; 
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #7f886a;
+        color: white;
+        font-size: 0.9rem;
+    }
+
+    td {
+        color: #333;
+        font-size: 0.9rem; 
+    }
+
+    /* Ô chọn sản phẩm */
+    select {
+        width: 90%;
+        padding: 5px; 
+        border: 1px solid #7f886a;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        color: #333;
+        font-size: 0.9rem;
+        appearance: none;
+        cursor: pointer;
+        background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%237f886a" d="M2 0L0 2h4z"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 10px;
+    }
+
+    select:hover {
+        border-color: #3e503c;
+    }
+
+    select:focus {
+        outline: none;
+        border-color: #ff6f3d;
+        box-shadow: 0 0 5px rgba(255, 111, 61, 0.5);
+    }
+
+    /* Ô giá sản phẩm */
+    td input[type="number"] {
+        width: 80%; 
+        padding: 5px; 
+        border: 1px solid #7f886a;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        color: #333;
+        font-size: 0.9rem; 
+        text-align: center;
+        appearance: none;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    td input[type="number"]:hover {
+        border-color: #3e503c;
+    }
+
+    td input[type="number"]:focus {
+        outline: none;
+        border-color: #ff6f3d;
+        box-shadow: 0 0 5px rgba(255, 111, 61, 0.5);
+    }
+
+    /* Số lượng */
+    .quantity-control {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px; 
+    }
+
+    .quantity-control button {
+        width: 25px;
+        height: 25px;
+        background-color: #7f886a;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 14px; 
+        cursor: pointer;
+    }
+
+    .quantity-control button:hover {
+        background-color: #3e503c;
+    }
+
+    .quantity-control input {
+        width: 40px; 
+        text-align: center;
+        border: 1px solid #3e503c;
+        border-radius: 4px;
+        margin: 0 5px;
+        background-color: #e9e9e9;
+        color: #7f886a;
+        font-size: 0.9rem; 
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #ff6f3d;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 10px auto;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e65b2c;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 8px;
+        }
+
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: black;
+            text-decoration: none;
+        }
+
+        #bill-content {
+            text-align: left;
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            margin-top: 40px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Giỏ hàng</h1>
+        <p>Quản lý sản phẩm và thanh toán dễ dàng</p>
+    </header>
+
+    <nav>
+        <a href="TrangChu.html" class="hidden">Trang chủ</a>
+        <a href="GioiThieu.html" class="hidden">Giới thiệu</a>
+        <a href="SanPham.html" class="hidden">Dịch vụ</a>
+        <a href="ChiTietSP.html" class="hidden">Chi tiết sản phẩm</a>
+        <a href="LienHe.html" class="hidden">Liên hệ</a>
+        <a href="Uudaivatintuc.html" class="hidden">Tin Tức</a>
+        <a href="FAQQ.html" class="hidden">FAQ</a>
+        <a href="DNDK.html" class="hidden">Đăng nhập/Đăng ký</a>
+        <a href="GioHang.html" class="hidden">Giỏ hàng</a>
+        <a href="NhanSu.html" class="hidden">Nhân sự</a>
+      </nav>
+
+    <h2 style="text-align: center; color: #ff6f3d;">Nhập thông tin sản phẩm</h2>
+    <table id="product-table">
+        <thead>
+            <tr>
+                <th>Sản phẩm</th>
+                <th>Giá (VND)</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <select onchange="updatePrice(this)">
+                        <option value="0">Chọn sản phẩm</option>
+                        <option value="450000">Set Tinh Hoa</option>
+                        <option value="650000">Set Tứ Phúc</option>
+                        <option value="800000">Set Trân Bảo</option>
+                    </select>
+                </td>
+                <td><input type="number" placeholder="Giá sản phẩm" readonly></td>
+                <td>
+                    <div class="quantity-control">
+                        <button onclick="decreaseQuantity(this)">-</button>
+                        <input type="number" value="1" min="1" readonly>
+                        <button onclick="increaseQuantity(this)">+</button>
+                    </div>
+                </td>
+                <td class="total-price">0</td>
+                <td><button onclick="removeProduct(this)">Xóa</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <button onclick="addProduct()">Thêm sản phẩm</button>
+    <h3 style="text-align: center;">Tổng tiền: <span id="total-price">0</span> VND</h3>
+    <button onclick="checkout()">Thanh toán</button>
+
+    <div id="bill-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeBillModal()">&times;</span>
+            <h3>Hóa đơn mua hàng</h3>
+            <pre id="bill-content"></pre>
+        </div>
+    </div>
+
+    <script>
+        function calculateTotalPrice(row) {
+            const priceInput = row.querySelector('td:nth-child(2) input');
+            const quantityInput = row.querySelector('.quantity-control input');
+            const totalPriceCell = row.querySelector('.total-price');
+
+            const price = parseFloat(priceInput.value) || 0;
+            const quantity = parseInt(quantityInput.value) || 0;
+
+            const total = price * quantity;
+            totalPriceCell.textContent = total.toLocaleString('vi-VN');
+            updateGrandTotal();
+        }
+
+        function updateGrandTotal() {
+            const rows = document.querySelectorAll('#product-table tbody tr');
+            let grandTotal = 0;
+
+            rows.forEach(row => {
+                const totalPriceCell = row.querySelector('.total-price');
+                const total = parseFloat(totalPriceCell.textContent.replace(/\./g, '').replace(/,/g, '')) || 0;
+                grandTotal += total;
+            });
+
+            document.getElementById('total-price').textContent = grandTotal.toLocaleString('vi-VN');
+        }
+
+        function addProduct() {
+            const tableBody = document.querySelector('#product-table tbody');
+            const newRow = document.createElement('tr');
+
+            newRow.innerHTML = `
+                <td>
+                    <select onchange="updatePrice(this)">
+                        <option value="0">Chọn sản phẩm</option>
+                        <option value="450000">Set Tinh Hoa</option>
+                        <option value="650000">Set Tứ Phúc</option>
+                        <option value="800000">Set Trân Bảo</option>
+                    </select>
+                </td>
+                <td><input type="number" placeholder="Giá sản phẩm" readonly></td>
+                <td>
+                    <div class="quantity-control">
+                        <button onclick="decreaseQuantity(this)">-</button>
+                        <input type="number" value="1" min="1" readonly>
+                        <button onclick="increaseQuantity(this)">+</button>
+                    </div>
+                </td>
+                <td class="total-price">0</td>
+                <td><button onclick="removeProduct(this)">Xóa</button></td>
+            `;
+
+            tableBody.appendChild(newRow);
+        }
+
+        function removeProduct(button) {
+            const row = button.parentElement.parentElement;
+            row.remove();
+            updateGrandTotal();
+        }
+
+        function increaseQuantity(button) {
+            const row = button.parentElement.parentElement.parentElement;
+            const quantityInput = button.previousElementSibling;
+            quantityInput.value = parseInt(quantityInput.value) + 1;
+            calculateTotalPrice(row);
+        }
+
+        function decreaseQuantity(button) {
+            const row = button.parentElement.parentElement.parentElement;
+            const quantityInput = button.nextElementSibling;
+            if (parseInt(quantityInput.value) > 1) {
+                quantityInput.value = parseInt(quantityInput.value) - 1;
+                calculateTotalPrice(row);
+            }
+        }
+
+        function updatePrice(selectElement) {
+            const row = selectElement.parentElement.parentElement;
+            const priceInput = row.querySelector('td:nth-child(2) input');
+            priceInput.value = selectElement.value;
+            calculateTotalPrice(row);
+        }
+
+        function checkout() {
+            const rows = document.querySelectorAll('#product-table tbody tr');
+            let billContent = 'Hóa đơn mua hàng:\n\n';
+            let grandTotal = 0;
+
+            rows.forEach((row, index) => {
+                const productSelect = row.querySelector('td:nth-child(1) select');
+                const productName = productSelect.options[productSelect.selectedIndex].text;
+                const price = parseFloat(row.querySelector('td:nth-child(2) input').value) || 0;
+                const quantity = parseInt(row.querySelector('.quantity-control input').value) || 0;
+                const total = price * quantity;
+
+                if (productName !== 'Chọn sản phẩm' && quantity > 0) {
+                    billContent += `${index + 1}. ${productName} - Giá: ${price.toLocaleString('vi-VN')} VND - Số lượng: ${quantity} - Thành tiền: ${total.toLocaleString('vi-VN')} VND\n`;
+                    grandTotal += total;
+                }
+            });
+
+            billContent += `\nTổng tiền: ${grandTotal.toLocaleString('vi-VN')} VND`;
+
+            if (grandTotal > 0) {
+                document.getElementById('bill-content').textContent = billContent;
+                document.getElementById('bill-modal').style.display = 'block';
+            } else {
+                alert('Giỏ hàng trống. Vui lòng thêm sản phẩm trước khi thanh toán.');
+            }
+        }
+
+        function closeBillModal() {
+            document.getElementById('bill-modal').style.display = 'none';
+        }
+    </script>
+        <footer>
+            &copy; 2025 Vo Vi Restaurant. All rights reserved.
+        </footer>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhân sự và Tuyển dụng</title>
+    <style>
+        /* Reset mặc định */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f3edcb;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #3E503C;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #5c7f67;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Staff Section */
+        .staff-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+            gap: 20px;
+        }
+
+        .staff-card {
+            background-color: #7f886a;
+            border: 1px solid #3e503c;
+            border-radius: 8px;
+            padding: 20px;
+            width: 250px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .staff-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .staff-card img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .staff-card h3 {
+            margin: 10px 0 5px;
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        .staff-card p {
+            margin: 5px 0;
+            color: #fff;
+            background-color: #ff6f3d;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        /* Recruitment Section */
+        .recruitment-section {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #7f886a;
+            border-radius: 8px;
+            color: #fff;
+        }
+
+        .recruitment-section h2 {
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .recruitment-section p {
+            margin: 10px 0;
+            color: #f3edcb;
+            font-size: 1rem;
+        }
+
+        .recruitment-process {
+            margin: 50px; 
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .recruitment-process h3 {
+            margin-bottom: 10px;
+            color: #ff6f3d;
+            font-size: 1.2rem;
+        }
+
+        .recruitment-process ol {
+            margin-left: 20px;
+            color: #333;
+        }
+
+        .recruitment-process ol li {
+            margin-bottom: 10px;
+        }
+
+        .details-toggle {
+            color: #ff6f3d;
+            cursor: pointer;
+            text-decoration: underline;
+            font-weight: bold;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        /* File Upload */
+        .custom-file-upload {
+            display: inline-block;
+            background-color: #ff6f3d;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .custom-file-upload:hover {
+            background-color: #e65b2c;
+        }
+
+        .custom-file-upload::before {
+            content: "📁 ";
+            font-size: 18px;
+        }
+
+        .file-preview {
+            margin-top: 10px;
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        .thank-you-message {
+            margin-top: 20px;
+            color: green;
+            font-weight: bold;
+            display: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nhân sự quán ăn</h1>
+        <p>Đội ngũ nhân sự chuyên nghiệp và tận tâm</p>
+    </header>
+
+    <nav>
+        <a href="TrangChu.html" class="hidden">Trang chủ</a>
+        <a href="GioiThieu.html" class="hidden">Giới thiệu</a>
+        <a href="SanPham.html" class="hidden">Dịch vụ</a>
+        <a href="ChiTietSP.html" class="hidden">Chi tiết sản phẩm</a>
+        <a href="LienHe.html" class="hidden">Liên hệ</a>
+        <a href="Uudaivatintuc.html" class="hidden">Tin Tức</a>
+        <a href="FAQQ.html" class="hidden">FAQ</a>
+        <a href="DNDK.html" class="hidden">Đăng nhập/Đăng ký</a>
+        <a href="GioHang.html" class="hidden">Giỏ hàng</a>
+        <a href="NhanSu.html" class="hidden">Nhân sự</a>
+      </nav>
+
+    <!-- Staff Section -->
+    <div class="staff-container">
+        <div class="staff-card">
+            <img src="Images\nhansuHanh.png" alt="Nhân viên 1">
+            <h3>Vũ Thị Hồng Hạnh</h3>
+            <p>Quản lý</p>
+        </div>
+        <div class="staff-card">
+            <img src="Images\NhansuDung.jpg" alt="Nhân viên 2">
+            <h3>Nguyễn Thị Thùy Dung</h3>
+            <p>Bếp trưởng</p>
+        </div>
+        <div class="staff-card">
+            <img src="Images\nhansuHang.jpg" alt="Nhân viên 3">
+            <h3>Bùi Thị Mai Hằng</h3>
+            <p>Quản lý</p>
+        </div>
+        <div class="staff-card">
+            <img src="Images\nhansuDuc.png" alt="Nhân viên 4">
+            <h3>Đỗ Hồng Đức</h3>
+            <p>Thu Ngân</p>
+        </div>
+    </div>
+
+    <!-- Recruitment Section -->
+    <div class="recruitment-section" id="tuyendung">
+        <h2>Tuyển thêm nhân viên</h2>
+        <p>Chúng tôi đang tìm kiếm những ứng viên năng động, nhiệt huyết để gia nhập đội ngũ của quán ăn. Nếu bạn quan tâm, vui lòng liên hệ với chúng tôi qua email hoặc số điện thoại bên dưới.</p>
+        <p>Email: <strong>tuyendung@quanan.com</strong></p>
+        <p>Số điện thoại: <strong>0123-456-789</strong></p>
+
+        <div class="recruitment-process">
+            <h3>Quy trình tuyển dụng:</h3>
+            <span class="details-toggle" onclick="toggleDetails()">Chi tiết</span>
+            <ol id="recruitment-steps" style="display: none;">
+                <li>Gửi CV qua email hoặc tải lên trực tiếp tại đây.</li>
+                <li>Chúng tôi sẽ xem xét hồ sơ và liên hệ với bạn trong vòng 3 ngày làm việc.</li>
+                <li>Phỏng vấn trực tiếp tại quán ăn.</li>
+                <li>Thông báo kết quả và hoàn tất thủ tục nhận việc.</li>
+            </ol>
+        </div>
+
+        <form id="cv-form" action="#" method="post" enctype="multipart/form-data">
+            <label for="cv-upload" class="custom-file-upload">Chọn tệp</label>
+            <input type="file" id="cv-upload" name="cv" accept=".pdf,.doc,.docx" style="display: none;">
+            <div class="file-preview" id="file-preview">Chưa có tệp nào được chọn.</div>
+            <button type="submit" class="custom-file-upload">Gửi CV ngay</button>
+        </form>
+
+        <div class="thank-you-message" id="thank-you-message">Cảm ơn bạn đã gửi CV! Chúng tôi sẽ liên hệ sớm nhất.</div>
+    </div>
+
+    <script>
+        function toggleDetails() {
+            const steps = document.getElementById('recruitment-steps');
+            if (steps.style.display === 'none') {
+                steps.style.display = 'block';
+            } else {
+                steps.style.display = 'none';
+            }
+        }
+
+        const fileInput = document.getElementById('cv-upload');
+        const filePreview = document.getElementById('file-preview');
+        const form = document.getElementById('cv-form');
+        const thankYouMessage = document.getElementById('thank-you-message');
+
+        fileInput.addEventListener('change', () => {
+            const fileName = fileInput.files[0]?.name || "Chưa có tệp nào được chọn.";
+            filePreview.textContent = `Tệp đã chọn: ${fileName}`;
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            thankYouMessage.style.display = 'block';
+        });
+        
+    </script>
+    <footer>
+        &copy; 2025 Vo Vi Restaurant. All rights reserved.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trang chủ - Nhà hàng chay Vô Vi </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #F3ECDB;
+      color: #333;
+    }
+    header {
+      background-color: #3E503C;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #5c7f67;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2em;
+      color: #666;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: white;
+      margin-top: 40px;
+    }
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50vh; 
+    }
+    video {
+      width: 720px;  
+      height: auto; 
+      border-radius: 1px;
+    }
+    .hidden {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease-in-out;
+    }
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    } 
+  </style>
+</head>
+<body>
+
+<header>
+  <h1 class="hidden">Vô Vi - Nhà hàng chay</h1>
+  <p class="hidden">Vì sức khỏe - Vì cộng đồng - Vì hành tinh</p>
+</header>
+
+<nav>
+  <a href="TrangChu.html" class="hidden">Trang chủ</a>
+  <a href="GioiThieu.html" class="hidden">Giới thiệu</a>
+  <a href="SanPham.html" class="hidden">Dịch vụ</a>
+  <a href="ChiTietSP.html" class="hidden">Chi tiết sản phẩm</a>
+  <a href="LienHe.html" class="hidden">Liên hệ</a>
+  <a href="Uudaivatintuc.html" class="hidden">Tin Tức</a>
+  <a href="FAQQ.html" class="hidden">FAQ</a>
+  <a href="DNDK.html" class="hidden">Đăng nhập/Đăng ký</a>
+  <a href="GioHang.html" class="hidden">Giỏ hàng</a>
+  <a href="NhanSu.html" class="hidden">Nhân sự</a>
+</nav>
+
+<div class="hero">
+  <h1 class="hidden">Chào mừng đến với Vô vi </h1>
+  <p class="hidden">Khám phá không gian ẩm thực chay thanh tịnh và bền vững dành cho bạn và gia đình.</p>
+</div>
+
+<img class="hidden" src="Images/gt1.jpg" alt="Nhà hàng chay" style="max-width: 100%; height: auto;">
+
+<div class="hero">
+  <h1 class="hidden">Vô vi chay </h1>
+  <p class="hidden">"Ẩm thực không chỉ là thức ăn, mà còn là một cách để chăm sóc tâm hồn." </p>
+</div>
+
+<div class="video-container">
+  <video class="hidden" controls>
+    <source src="Videos/videotc.mp4" type="video/mp4">
+  </video>
+</div>
+
+<footer>
+  &copy; 2025 Vo Vi Restaurant. All rights reserved.
+</footer>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  });
+
+  const hiddenElements = document.querySelectorAll('.hidden');
+  hiddenElements.forEach(el => observer.observe(el));
+</script>
+
+<button id="backToTopBtn" style="display:none;position:fixed;bottom:30px;right:30px;padding:10px 15px;background:#5c7f67;color:white;border:none;border-radius:5px;cursor:pointer;">↑ Top</button>
+
+<script>
+  const backToTopBtn = document.getElementById('backToTopBtn');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.style.display = 'block';
+    } else {
+      backToTopBtn.style.display = 'none';
+    }
+  });
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
+
+</body>
+</html>
